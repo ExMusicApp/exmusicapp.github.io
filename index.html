@@ -4,89 +4,157 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ExMusic — Яндекс Музыка на Material 3 Expressive</title>
-<meta name="description" content="ExMusic — нативный клиент Яндекс Музыки для Android: «Моя волна», эквалайзер, плейлисты, музыка с устройства и темы под ваш цвет.">
-<meta name="theme-color" content="#10131b">
+<meta name="description" content="ExMusic — нативный клиент Яндекс Музыки для Android: «Моя волна», чарт, распознавание музыки, эквалайзер, плейлисты и темы под ваш цвет.">
+<meta name="theme-color" content="#12131a">
 <link rel="icon" href="assets/icon.png">
 <link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 </head>
 <body>
 
-<header class="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs id="shapes"></defs>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M7 18h2V6H7v12zm4 4h2V2h-2v20zm-8-8h2v-4H3v4zm12 4h2V6h-2v12zm4-8v4h2v-4h-2z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></symbol>
+  <symbol id="i-eq" viewBox="0 0 24 24"><path d="M10 20h4V4h-4v16zm-6 0h4v-8H4v8zM16 9v11h4V9h-4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 10h11v2H3zm0-4h11v2H3zm0 8h7v2H3zm13-1v8l6-4z"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></symbol>
+  <symbol id="i-lyr" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM4 12h4v2H4v-2zm10 6H4v-2h10v2zm6 0h-4v-2h4v2zm0-4H10v-2h10v2z"/></symbol>
+  <symbol id="i-wdg" viewBox="0 0 24 24"><path d="M13 13v8h8v-8h-8zM3 21h8v-8H3v8zM3 3v8h8V3H3zm13.66-1.31L11 7.34 16.66 13l5.66-5.66-5.66-5.65z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></symbol>
+</svg>
+
+<header class="bar">
   <a class="brand" href="#top"><img src="assets/icon.png" alt="" width="40" height="40">ExMusic</a>
   <nav aria-label="Разделы">
     <a href="#features">Возможности</a>
     <a href="#screens">Скриншоты</a>
+    <a href="#login">Вход</a>
   </nav>
-  <a class="btn tonal sm" href="https://t.me/ExMusicApp" target="_blank" rel="noopener">Telegram</a>
+  <a class="btn p sm" href="https://t.me/ExMusicApp" target="_blank" rel="noopener">Скачать</a>
 </header>
 
 <main id="top">
   <section class="hero">
-    <div class="hero-text">
+    <div>
       <h1>Яндекс Музыка в стиле Material 3 Expressive</h1>
-      <p class="lead">Нативное приложение для Android: ваша коллекция, «Моя волна», эквалайзер и оформление под ваш цвет. Это не патч официального клиента.</p>
+      <p class="lead">Нативное приложение для Android: ваша коллекция, «Моя волна», чарт, распознавание музыки, эквалайзер и оформление под ваш цвет. Это не патч официального клиента.</p>
       <div class="actions">
-        <a class="btn primary" href="https://t.me/ExMusicApp" target="_blank" rel="noopener">Скачать в Telegram</a>
-        <a class="btn tonal" href="https://github.com/ExMusicApp" target="_blank" rel="noopener">Исходники на GitHub</a>
+        <a class="btn p" href="https://t.me/ExMusicApp" target="_blank" rel="noopener">Скачать в Telegram</a>
+        <a class="btn t" href="https://github.com/ExMusicApp" target="_blank" rel="noopener">Исходники на GitHub</a>
       </div>
       <p class="meta">Версия 0.5.2 beta. Сборки выходят в Telegram-канале.</p>
     </div>
-    <div class="hero-phones" aria-hidden="true">
-      <div class="phone back"><img src="assets/screens/search.webp" alt="" width="1080" height="2208"></div>
-      <div class="phone front"><img src="assets/screens/home.webp" alt="" width="1080" height="2400"></div>
+    <div class="stage" aria-hidden="true">
+      <div class="blob"></div>
+      <div class="phone a"><img src="assets/screens/welcome.webp" alt="" width="720" height="1610"></div>
+      <div class="phone b"><img src="assets/screens/home.webp" alt="" width="720" height="1610"></div>
     </div>
   </section>
 
-  <section id="features" class="section">
+  <section id="features" class="sec">
     <h2>Всё для прослушивания в одном приложении</h2>
     <div class="bento">
-      <article class="card c3 accent">
+      <article class="card pc s7">
+        <div class="ico ck12"><svg class="i"><use href="#i-wave"/></svg></div>
         <h3>Моя волна</h3>
         <p>Один тап на главном экране запускает бесконечный поток. Характер, настроение и язык настраиваются в пару касаний.</p>
+        <div class="prog" aria-hidden="true"><div class="wave"><svg id="wave" viewBox="0 0 1240 20"><path fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg></div><div class="thumb"></div><div class="track"></div></div>
+        <div><span class="btn p"><svg class="i"><use href="#i-wave"/></svg>Моя волна</span></div>
       </article>
-      <article class="card c3">
-        <h3>Вся ваша музыка</h3>
-        <p>«Любимое», плейлисты и поиск по трекам, исполнителям и альбомам. Страницы артистов и альбомов с переходом к играющему треку.</p>
+
+      <article class="card tc s5 rs2">
+        <div class="ico ck9"><svg class="i"><use href="#i-chart"/></svg></div>
+        <h3>Чарт</h3>
+        <p>Самые популярные треки: слушайте подборку целиком или вперемешку.</p>
+        <div class="crop"><div class="phone"><img src="assets/screens/chart.webp" alt="Экран чарта с самыми популярными треками" loading="lazy" width="720" height="1610"></div></div>
       </article>
-      <article class="card c2">
+
+      <article class="card sc s7">
+        <div class="ico ck6"><svg class="i"><use href="#i-mic"/></svg></div>
+        <h3>Распознать музыку</h3>
+        <p>Узнаёт трек с микрофона или со звука устройства. Плитку распознавания можно добавить в шторку и запускать одним касанием.</p>
+      </article>
+
+      <article class="card s4">
+        <div class="ico ck9"><svg class="i"><use href="#i-eq"/></svg></div>
         <h3>Эквалайзер</h3>
         <p>Полосы частот и готовые пресеты.</p>
       </article>
-      <article class="card c2">
+      <article class="card hi s4">
+        <div class="ico ck12"><svg class="i"><use href="#i-list"/></svg></div>
         <h3>Свои плейлисты</h3>
         <p>Создавайте, переименовывайте и удаляйте плейлисты, добавляйте в них треки прямо из поиска.</p>
       </article>
-      <article class="card c2">
-        <h3>Фоновое воспроизведение</h3>
-        <p>Уведомление, экран блокировки и выбор устройства вывода звука.</p>
+      <article class="card s4">
+        <div class="ico ck6"><svg class="i"><use href="#i-down"/></svg></div>
+        <h3>Скачивание</h3>
+        <p>Сохраняйте «Любимое», плейлисты и альбомы и слушайте скачанное без сети.</p>
       </article>
-      <article class="card c3">
+      <article class="card hi s4">
+        <div class="ico ck9"><svg class="i"><use href="#i-lyr"/></svg></div>
+        <h3>Тексты песен</h3>
+        <p>Строки с таймкодами, если они есть в источнике, и обычный текст, если нет.</p>
+      </article>
+      <article class="card s4">
+        <div class="ico ck12"><svg class="i"><use href="#i-wdg"/></svg></div>
+        <h3>Виджет и фон</h3>
+        <p>Виджет с обложкой и управлением, уведомление, экран блокировки и выбор устройства вывода звука.</p>
+      </article>
+      <article class="card hi s4">
+        <div class="ico ck6"><svg class="i"><use href="#i-phone"/></svg></div>
         <h3>Файлы с устройства</h3>
-        <p>Папка «С устройства» в плейлистах открывает музыку с вашего телефона, а в поиске она выводится отдельной группой. Доступ к аудио приложение просит при первом заходе, а отключить функцию можно в настройках: «Офлайн-режим».</p>
-      </article>
-      <article class="card c3 theme">
-        <div>
-          <h3>Оформление под вас</h3>
-          <p>Светлая, тёмная или системная тема и свой акцентный цвет.</p>
-        </div>
+        <p>Папка «С устройства» открывает музыку с телефона. Отключить её можно в настройках: «Офлайн-режим».</p>
       </article>
     </div>
   </section>
 
-  <section id="screens" class="section">
+  <section id="screens" class="sh">
     <h2>Как это выглядит</h2>
-    <div class="shots">
-      <figure><div class="phone"><img src="assets/screens/home.webp" alt="Главный экран: кнопка «Моя волна», плейлисты и любимые треки" loading="lazy" width="1080" height="2400"></div><figcaption>Главная</figcaption></figure>
-      <figure><div class="phone"><img src="assets/screens/search.webp" alt="Экран поиска по трекам и исполнителям" loading="lazy" width="1080" height="2208"></div><figcaption>Поиск</figcaption></figure>
-      <figure><div class="phone"><img src="assets/screens/settings.webp" alt="Экран настроек с мини-плеером" loading="lazy" width="1080" height="2193"></div><figcaption>Настройки</figcaption></figure>
+    <div class="car">
+      <figure><div class="phone"><img src="assets/screens/welcome.webp" alt="Экран приветствия с входом через Яндекс" loading="lazy" width="720" height="1610"></div><figcaption>Приветствие</figcaption></figure>
+      <figure><div class="phone"><img src="assets/screens/home.webp" alt="Главный экран: «Моя волна», поиск, плейлисты и чарт" loading="lazy" width="720" height="1610"></div><figcaption>Главная</figcaption></figure>
+      <figure><div class="phone"><img src="assets/screens/chart.webp" alt="Чарт: самые популярные треки" loading="lazy" width="720" height="1610"></div><figcaption>Чарт</figcaption></figure>
+      <figure><div class="phone"><img src="assets/screens/login.webp" alt="Вход через Яндекс: код для ya.ru/device" loading="lazy" width="720" height="1610"></div><figcaption>Вход через Яндекс</figcaption></figure>
     </div>
   </section>
 
+  <section id="login" class="sec">
+    <h2>Вход через Яндекс за три шага</h2>
+    <div class="login">
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>Нажмите «Войти через Яндекс»</b><span>Приложение покажет код входа.</span></div></li>
+        <li><span class="n">2</span><div><b>Код копируется сам</b><span>Нажмите на код, чтобы скопировать его снова.</span></div></li>
+        <li><span class="n">3</span><div><b>Откройте ya.ru/device и вставьте код</b><span>Приложение войдёт автоматически.</span></div></li>
+      </ol>
+      <div class="lg"><div class="phone"><img src="assets/screens/login.webp" alt="" loading="lazy" width="720" height="1610"></div></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div>
+      <div class="ct">
+        <h2>Попробуйте ExMusic</h2>
+        <div class="actions">
+          <a class="btn inv" href="https://t.me/ExMusicApp" target="_blank" rel="noopener">Скачать в Telegram</a>
+          <a class="btn ln" href="https://github.com/ExMusicApp" target="_blank" rel="noopener">Исходники на GitHub</a>
+        </div>
+      </div>
+      <div class="tilt" aria-hidden="true">
+        <div class="phone t1"><img src="assets/screens/chart.webp" alt="" loading="lazy" width="720" height="1610"></div>
+        <div class="phone t2"><img src="assets/screens/home.webp" alt="" loading="lazy" width="720" height="1610"></div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="foot">
   <span>ExMusic 0.5.2 beta. Неофициальный клиент, не связан с Яндексом.</span>
-  <span><a href="https://t.me/ExMusicApp" target="_blank" rel="noopener">Telegram</a> <a href="https://github.com/ExMusicApp" target="_blank" rel="noopener">GitHub</a></span>
+  <span><a href="https://t.me/ExMusicApp" target="_blank" rel="noopener">Telegram</a><a href="https://github.com/ExMusicApp" target="_blank" rel="noopener">GitHub</a></span>
 </footer>
 
 </body>
