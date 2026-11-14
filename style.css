@@ -33,7 +33,7 @@ h3{font-size:clamp(24px,2.4vw,32px);line-height:1.15;font-weight:700;letter-spac
 /* Плавающая панель */
 .bar{position:fixed;z-index:10;top:12px;left:50%;translate:-50% 0;display:flex;align-items:center;gap:4px;max-width:calc(100% - 24px);padding:8px 8px 8px 12px;background:var(--s3);border-radius:var(--rb)}
 .brand{display:flex;align-items:center;gap:10px;margin-right:16px;font-weight:700;font-size:20px;text-decoration:none}
-.brand img{width:40px;height:40px;clip-path:url(#cookie12)}
+.brand img{width:40px;height:40px}
 .bar nav{display:flex;gap:2px}
 .bar nav a{padding:10px 16px;border-radius:var(--rb);text-decoration:none;font-weight:500;color:var(--ov);transition:background .2s,border-radius .35s var(--spring)}
 .bar nav a:hover{background:var(--s4);color:var(--on)}
